@@ -9,9 +9,13 @@ app.get('/', (req, res) => {
     
 })
 
+// app.get('/:id', (req, res) => {
+//     queries.getById(req.params.id).then(students => res.send(students))
+// })
 
-
-
+// app.post('/', (req, res) => {
+//     queries.createStudent(req.body).then(students => res.send(students))
+// })
 
 
 
