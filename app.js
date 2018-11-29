@@ -22,6 +22,9 @@ app.delete('/:id', (req, res) => {
     queries.deleteStudent(request.params.id).then(res.sendStatus(204))
 })
 
+app.put("/:id", (req, res) => {
+    queries.updateStudent(req.params.id, req.body).then(updatedStudent => res.json(updatedStudent[0]))
+})
 
 
 

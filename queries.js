@@ -14,7 +14,10 @@ module.exports = {
         return db('students')
             .where('id', id)
             .delete()
-          }
+          },
+    updateStudent(id, student) {
+        return db('students').where('id', id).update(student)
+    }
     }
     
   
