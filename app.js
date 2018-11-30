@@ -7,7 +7,6 @@ var cors = require('cors')
 
 app.get('/', (req, res) => {
     queries.listAll().then(students => res.send(students))
-    
 })
 
 app.get('/:id', (req, res) => {
@@ -23,9 +22,7 @@ app.delete('/:id', (req, res) => {
 })
 
 app.put("/:id", (req, res) => {
-    queries.updateStudent(req.params.id, req.body).then(updatedStudent => res.json(updatedStudent[0]))
+    queries.updateStudent(req.params.id, req.body).then(updatedStudent => res.json(updatedStudent[0])).returning('*')
 })
-
-
 
 app.listen(port, () => console.log(`listening on port ${port}`))
